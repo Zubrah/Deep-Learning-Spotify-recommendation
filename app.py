@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(page_title="Song Recommendation", layout="wide")
+st.set_page_config(page_title="Deep Learning Song Recommendation", layout="wide")
 
 import pandas as pd
 from sklearn.neighbors import NearestNeighbors
@@ -13,7 +13,7 @@ def load_data():
     exploded_track_df = df.explode("genres")
     return exploded_track_df
 
-genre_names = ['Dance Pop', 'Electronic', 'Electropop', 'Hip Hop', 'Jazz', 'K-pop', 'Latin', 'Pop', 'Pop Rap', 'R&B', 'Rock']
+genre_names = ['Dance Pop', 'Electronic', 'Electropop', 'Hip Hop', 'Jazz', 'K-pop', 'Latin', 'Pop', 'Pop Rap', 'R&B', 'Rock', 'Afrobeats']
 audio_feats = ["acousticness", "danceability", "energy", "instrumentalness", "valence", "tempo"]
 
 exploded_track_df = load_data()
@@ -33,11 +33,13 @@ def n_neighbors_uri_audio(genre, start_year, end_year, test_feat):
     return uris, audios
 
 def page():
-    title = "Song Recommendation Engine"
+    title = "Spotify Deep Learning Recommender system"
     st.title(title)
 
-    st.write("First of all, welcome! This is the place where you can customize what you want to listen to based on genre and several key audio features. Try playing around with different settings and listen to the songs recommended by our system!")
-    st.markdown("##")
+    st.write("First of all, welcome! This is the place where you can customize what you want to listen to based on genre and several key audio features.")
+    
+    st.markdown("# Instruction #")
+    st.write("Try playing around with different settings and listen to the songs recommended by our system!")
 
     with st.container():
         col1, col2,col3,col4 = st.columns((2,0.5,0.5,0.5))
@@ -77,7 +79,7 @@ def page():
 
     tracks = []
     for uri in uris:
-        track = """<iframe src="https://open.spotify.com/embed/track/{}" width="260" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>""".format(uri)
+        track = """<iframe src="https://open.spotify.com/embed/track/{}" width="340" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>""".format(uri)
         tracks.append(track)
 
     if 'previous_inputs' not in st.session_state:
@@ -115,6 +117,7 @@ def page():
                             fig = px.line_polar(df, r='r', theta='theta', line_close=True)
                             fig.update_layout(height=400, width=340)
                             st.plotly_chart(fig)
+                    
             
                 else:
                     with col3:
