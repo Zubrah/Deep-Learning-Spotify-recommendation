@@ -3,7 +3,9 @@
 Spotify is one of the newest innovations to have come to audio listening and experience with over 125 million subscribers. Though the service has recently begun it dominates Apple Music and Amazon music in the audio streaming market. From music, they have extended the audio service to Podcasts, Audiobooks, and so on. Spotify Trends helps any content creator/musician in order to understand what listeners prefer and how to compete in this immensely growing market.
 
 
-Demo Deployed to : 
+Demo Deployed to : https://share.streamlit.io/zubrah/deep-learning-spotify-recommendation/app.py
+
+Deep Learning Notebook : https://colab.research.google.com/drive/1i8eePMhHoeDbY2d7jTjq2YE3lqxkJIeW?usp=sharing
 
 
 
