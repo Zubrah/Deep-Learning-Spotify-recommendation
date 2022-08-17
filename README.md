@@ -34,6 +34,6 @@ Deep Learning Notebook : https://colab.research.google.com/drive/1i8eePMhHoeDbY2
 
 
 
-Authors : 
+Author : 
 - Zuberi Msemo
-- Goodluck Malata
+
